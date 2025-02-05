@@ -709,21 +709,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div>
     <h2> For google Analytics purpose</h2>
       <a href="https://www.udemy.com/" target="_blank"><h2>Udemy link</h2></a>
-    <h3>local video</h3>
-     <video width="600" controls>
-  <source src="https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/video/4114797-uhd_3840_2160_25fps.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+    
+    <h1>Video Example local</h1>
+    <video width="600" controls>
+        <source src="https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/video/4114797-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 
-    <h3>youtube video</h3>
+     <h1>YouTube Video Example</h1>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/_rm4SNmhDXA?si=Qypc9Ntyl_8EHXsu" frameborder="0" allowfullscreen></iframe>
 
+    
+    <h1>Download PDF Example</h1>
+    <p>Click the button below to download the PDF file:</p>
+    <button onclick="downloadPDF()">Download PDF</button>
 
-    <h3>File Download</h3>
-<a href="https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/Document/About.pdf" download>Download PDF</a>
-
-
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.href = 'https://drive.google.com/uc?export=download&id=1XfZqQUGjFfHHlNpkQP9F3j1HL1qN8zpo';
+            link.download = 'About.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 
     
 
