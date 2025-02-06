@@ -756,12 +756,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
     function downloadPDF() {
-        const link = document.createElement('a');
-        link.href = 'https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/Document/About.pdf';
-        link.setAttribute('download', 'About.pdf');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        fetch('https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/Document/About.pdf')
+            .then(response => response.blob())
+            .then(blob => {
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'About.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            })
+            .catch(error => console.error('Error downloading the file:', error));
     }
 </script>
 
