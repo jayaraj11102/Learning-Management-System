@@ -750,7 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     </script>
 
-    <h1>Download PDF Example 2</h1>
+   <h1>Download PDF Example 2</h1>
 <p>Click the button below to download the PDF file:</p>
 <button onclick="downloadPDF()">Download PDF</button>
 
@@ -758,12 +758,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function downloadPDF() {
         const link = document.createElement('a');
         link.href = 'https://raw.githubusercontent.com/jayaraj11102/Learning-Management-System/main/assets/Document/About.pdf';
-        link.download = 'About.pdf';
+        link.setAttribute('download', 'About.pdf');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     }
 </script>
+
 
 
     
